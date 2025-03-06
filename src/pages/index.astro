@@ -1,32 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import style from '../assets/style.css'
+import Logo from '../assets/img/logo/logo.svg'
+
+import Event_R35 from '../assets/img/events/r35/thumbnail.png'
+import Event_Begin2025 from '../assets/img/events/begin2025/thumbnail.png'
+import Event_Bounen2024 from '../assets/img/events/bounen2024/thumbnail.png'
+
+import Event_Scene_Okane from '../assets/img/events/okane/scene.jpg'
+import Event_Scene_Pdm from '../assets/img/events/pdm/scene.jpg'
+import Event_Scene_Fintech from '../assets/img/events/fintech/scene.jpg'
+
+import Staff_kgsi from '../assets/img/staff/kgsi.png'
+import Staff_kocho_katsuhiko from '../assets/img/staff/kocho_katsuhiko.png'
+import Staff_mrhiro1112 from '../assets/img/staff/mrhiro1112.png'
+import Staff_tkhr_kws from '../assets/img/staff/tkhr_kws.png'
+import Staff_mewmoppel from '../assets/img/staff/mewmoppel.png'
+import Staff_creatorqsf from '../assets/img/staff/creatorqsf.png'
+---
+
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
     <title>CrossRel 交差するテックコミュニティ</title>
     <link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="m-0 font-sans text-medium flex flex-col items-center">
-    <aside class="p-6">
-      <figure class="m-0">
-        <img src="https://placehold.jp/2000x360.png" alt="" class="h-[22.5rem] object-cover rounded-medium" >
+    <aside class="p-6 w-full">
+      <figure class="m-0 w-full">
+        <Image src={Event_Scene_Pdm} alt="" class="h-[30rem] object-cover rounded-medium w-full" />
         <figcaption class="w-full text-end">
-          お金のミートアップ
+          <a href="" class="underline">Product Design Meetup</a>
+          ·
           <time datetime="2021-01-01">2021年1月1日</time>
         </figcaption>
       </figure>
     </aside>
-    <header class="p-6 max-w-content w-full flex flex-col gap-6">
+    <header class="p-6 py-10 max-w-content w-full flex flex-col gap-6">
       <h1>
-        <img src="https://placehold.jp/240x48.png" alt="CrossRelのロゴ画像" />
+        <Image src={Logo} alt="CrossRelのロゴ画像" class="h-12 w-auto" />
       </h1>
-      <p>交差するテックコミュニティ</p>
+      <p class="ms-[-0.5em]">「交差」するテックコミュニティ</p>
     </header>
     <main class="w-full flex flex-col items-center gap-6">
+      <!--
       <section class="p-6 max-w-content w-full flex flex-col gap-6 bg-[#f4f4f6] rounded-medium">
         <h2 class="font-bold">近日開催予定のイベント</h2>
         <div class="flex gap-6 flex-wrap">
-          <img src="https://placehold.jp/234x120.png" alt="" />
+          <Image src={Event_R35} alt="" class="h-[7.5rem] w-auto" />
           <div>
             <p><strong><a href="">イベント名</a></strong></p>
             <p><time datetime="2021-01-01">2021年1月1日</time></p>
@@ -35,8 +64,9 @@
           </div>
         </div>
       </section>
-      <section class="p-6 max-w-content w-full flex flex-col gap-6">
-        <h2 class="text-huge font-bold">テック業界の多様な才能が集まり、<br>ナレッジや人材同士が「交差」できる<br>コミュニティ</h2>
+      -->
+      <section class="p-6 pb-20 max-w-content w-full flex flex-col gap-6">
+        <h2 class="ms-[-0.12em] [font-feature-settings:'halt'] text-huge break-keep [overflow-wrap:anywhere]">テック業界の多様な才能が集まり、<wbr>ナレッジや人材同士が「交差」できる<wbr>コミュニティ</h2>
         <p>
         CrossRelは、テック業界の多様な才能が集い、ナレッジや人材が交差するコミュニティです。<br>
         個の力だけでは成し得ない、交差することで生まれる新たな価値創造を目指しています。<br>
@@ -44,85 +74,194 @@
         </p>
       </section>
       <section class="w-full bg-[#f4f4f6] flex items-center flex-col">
-        <div class="p-6 max-w-content w-full flex flex-col gap-6">
-          <h2 class="text-large font-bold">過去の開催イベント</h2>
-          <ul class="flex flex-wrap gap-6">
-            <li class="grow">
-              <img src="https://placehold.jp/234x120.png" alt="" class="w-full h-auto"/>
-              <h3 class="text-large font-bold"><a href="">デザイン初め新年会2025</a></h3>
-              <p><time datetime="2021-01-01">2021年1月1日</time></p>
-              <p>対象: デザイナー</p>
+        <div class="p-20 w-full flex flex-col gap-12">
+          <h2 class="text-large font-bold [font-feature-settings:'halt']">過去の開催イベント:</h2>
+          <ul class="grid gap-16 grid-cols-[repeat(auto-fill,_minmax(min(25em,100%),1fr))]">
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
             </li>
-            <li class="grow">
-              <img src="https://placehold.jp/234x120.png" alt="" class="w-full h-auto" />
-              <h3 class="text-large font-bold"><a href="">デザイン初め新年会2025</a></h3>
-              <p><time datetime="2021-01-01">2021年1月1日</time></p>
-              <p>対象: デザイナー</p>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Bounen2024} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">大テック業界忘年会2024</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
+            </li>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
+            </li>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
+            </li>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
+            </li>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
+            </li>
+            <li class="grow flex flex-col gap-4">
+              <Image src={Event_Begin2025} alt="" class="w-full h-auto" />
+              <div class="flex flex-col">
+                <h3 class="text-xlarge font-bold">デザイン初め新年会2025</h3>
+                <p><time datetime="2021-01-01">2021年1月1日</time></p>
+                <p>対象: デザイナー</p>
+                <p><a class="underline text-[blue]" href="">イベントページ</a></p>
+              </div>
             </li>
           </ul>
         </div>
       </section>
       <section class="w-full flex items-center flex-col">
-        <div class="p-6 max-w-content w-full flex flex-col gap-6">
-          <h2 class="text-large font-bold">スタッフ</h2>
+        <div class="p-20 w-full flex flex-col gap-6">
+          <div class="flex flex-col gap-6">
+          <h2 class="text-large font-bold [font-feature-settings:'halt']">スタッフ:</h2>
           <p>
           CrossRelの運営は、コアスタッフの参画によって成立します。<br>
           これまで各イベントに企画、運営で協力いただいたスタッフを掲載しています。
           </p>
-          <ul class="flex flex-wrap gap-6">
-            <li>
-              <img src="https://placehold.jp/160x160.png" alt="" class="rounded-full" />
-              <h3>山田太郎</h3>
-              <p></p>
+          </div>
+          <ul class="grid gap-12 grid-cols-[repeat(auto-fill,_minmax(min(15em,100%),1fr))]">
+            <li class="grow">
+              <Image src={Staff_kgsi} alt="" class="w-full h-auto" />
+              <h3 class="text-xlarge font-bold">こぎそ</h3>
+              <p>プロダクトデザイナー/コミュニティオーナー</p>
+              <p><a href="https://x.com/kgsi" class="underline text-[blue]">@kgsi</a></p>
+            </li>
+            <li class="grow">
+              <Image src={Staff_kocho_katsuhiko} alt="" class="w-full h-auto" />
+              <h3 class="text-large font-bold">こちょう</h3>
+              <p>デザインマネージャー</p>
+              <p><a href="https://x.com/kocho_katsuhiko" class="underline text-[blue]">@kocho_katsuhiko</a></p>
+            </li>
+            <li class="grow">
+              <Image src={Staff_mrhiro1112} alt="" class="w-full h-auto" />
+              <h3 class="text-large font-bold">tsubo</h3>
+              <p><a href="https://x.com/mrhiro1112" class="underline text-[blue]">@mrhiro1112</a></p>
+            </li>
+            <li class="grow">
+              <Image src={Staff_tkhr_kws} alt="" class="w-full h-auto" />
+              <h3 class="text-large font-bold">takehiro kawase</h3>
+              <p>デザイナー</p>
+              <p><a href="@tkhr_kws" class="underline text-[blue]">@tkhr_kws</a></p>
+            </li>
+            <li class="grow">
+              <Image src={Staff_mewmoppel} alt="" class="w-full h-auto" />
+              <h3 class="text-large font-bold">mewmo</h3>
+              <p>デザインプログラムマネージャー</p>
+              <p><a href="https://x.com/mewmoppel" class="underline text-[blue]">@mewmoppel</a></p>
+            </li>
+            <li class="grow">
+              <Image src={Staff_creatorqsf} alt="" class="w-full h-auto" />
+              <h3 class="text-large font-bold">たふみ</h3>
+              <p>オンスクリーンプロダクトデザイナー</p>
+              <p><a href="https://x.com/creatorqsf" class="underline text-[blue]">@CreatorQsF</a></p>
             </li>
           </ul>
         </div>
       </section>
       <section class="w-full bg-[#f4f4f6] flex items-center flex-col">
-        <div class="p-6 max-w-content w-full flex flex-col gap-6">
-          <h2 class="text-large font-bold">開催風景</h2>
-          <ul>
-            <li>
-              <img src="" alt="">
-              <h3></h3>
-              <p></p>
+        <div class="p-20 w-full flex flex-col gap-12">
+          <h2 class="text-large font-bold [font-feature-settings:'halt']">開催風景:</h2>
+          <ul class="grid gap-12 grid-cols-[repeat(auto-fill,_minmax(min(25em,100%),1fr))]">
+            <li class="grow">
+              <Image src={Event_Scene_Okane} alt="" class="w-full h-full object-fill " />
+            </li>
+            <li class="grow">
+              <Image src={Event_Scene_Pdm} alt="" class="w-full h-full object-fill" />
+            </li>
+            <li class="grow">
+              <Image src={Event_Scene_Fintech} alt="" class="w-full h-full object-fill" />
+            </li>
+            <li class="grow">
+              <Image src={Event_Scene_Okane} alt="" class="w-full h-full object-fill " />
+            </li>
+            <li class="grow">
+              <Image src={Event_Scene_Pdm} alt="" class="w-full h-full object-fill" />
+            </li>
+            <li class="grow">
+              <Image src={Event_Scene_Fintech} alt="" class="w-full h-full object-fill" />
             </li>
           </ul>
         </div>
       </section>
       <section class="w-full flex items-center flex-col">
-        <div class="p-6 max-w-content w-full flex flex-col gap-6">
-          <h2 class="text-large font-bold">スポンサー</h2>
+        <div class="p-20 w-full flex flex-col gap-12">
+          <h2 class="text-large font-bold [font-feature-settings:'halt']">スポンサー:</h2>
           <h3 class="text-medium font-bold">コミュニティスポンサー</h3>
-          <ul>
-            <li>
+          <ul class="grid gap-12 grid-cols-[repeat(auto-fill,_minmax(min(25em,100%),1fr))]">
+            <li class="grow">
               <a href="">
-                <img src="" alt="" />
+                <Image src={Logo} alt="" />
+              </a>
+            </li>
+            <li class="grow">
+              <a href="">
+                <Image src={Logo} alt="" />
               </a>
             </li>
           </ul>
-          <h3 class="text-medium font-bold">イベントスポンサー</h3>
+          <h3 class="text-medium font-bold mt-20">イベントスポンサー</h3>
           <ul>
             <li>
-              <a href="">株式会社ああああ</a>
+              <a class="underline text-[blue]" href="">株式会社ああああ</a>
+            </li>
+            <li>
+              <a class="underline text-[blue]" href="">株式会社ああああ</a>
+            </li>
+            <li>
+              <a class="underline text-[blue]" href="">株式会社ああああ</a>
+            </li>
+            <li>
+              <a class="underline text-[blue]" href="">株式会社ああああ</a>
             </li>
           </ul>
         </div>
       </section>
-      <section class="w-full bg-[#f4f4f6] flex items-center flex-col">
-        <div class="p-6 max-w-content w-full flex flex-col gap-6">
-          <h2 class="text-large font-bold">お問い合わせ</h2>
+      <section class="w-full bg-[#f4f4f6] flex flex-col">
+        <div class="p-20 max-w-content w-full flex flex-col gap-12">
+          <h2 class="text-large font-bold [font-feature-settings:'halt']">お問い合わせ:</h2>
           <p>
-          コミュニティを支える支援と仲間を探しています。
-        
-          CrossRelは、コミュニティを共に盛り上げてくれる仲間や、活動を支援してくださるスポンサーを募集しています。
-          経験は問いません。コミュニティの立ち上げや成長に情熱を注げる方、テック業界を応援したい方の参加をお待ちしています。
+          コミュニティを支える支援と仲間を探しています。<br>
+          CrossRelは、コミュニティを共に盛り上げてくれる仲間や、活動を支援してくださるスポンサーを募集しています。<br>
+          経験は問いません。コミュニティの立ち上げや成長に情熱を注げる方、テック業界を応援したい方の参加をお待ちしています。<br>
           SNSで随時情報を発信しますので、登録/フォローをお願いします。
           </p>
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="p-20 ">
       <p>
         <small>&copy; 2025 CrossRel</small>
       </p>
