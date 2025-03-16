@@ -7,15 +7,15 @@ export default {
       full: '99999px',
     },
     fontFamily: {
-      'sans': ['Open Sans', 'Noto Sans JP', 'sans-serif'],
+      'sans': ['IBM Plex Sans', 'sans-serif'],
     },
     fontSize: {
       'medium': [
         '1.0rem', // 16px
         {
-          lineHeight: '2.25rem', // 32px
-          letterSpacing: '0.02em',
-          fontWeight: '450',
+          lineHeight: '1.8',
+          letterSpacing: '0',
+          fontWeight: '400',
         },
       ],
       'large': [
