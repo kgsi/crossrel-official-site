@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content'
+import { dateFormatter } from '../../../libs/formatters/date'
+import { targetFormatter } from '../../../libs/formatters/target'
+
+import Section from '../../../components/section.astro'
+
+const events = await getCollection('events')
+---
+
+<Section title="イベント">
+  <div class="flex flex-col gap-12">
+    <nav>
+      <ol>
+        {
+          events.map((event) => (
+          <li class="contents [&:not(:first-of-type)]:before:content-['/'] [&:not(:first-of-type)]:before:inline-block [&:not(:first-of-type)]:before:px-2">
+            <a
+              href="#"
+              class="underline text-[1.25rem]"
+            >{event.data.title}</a>
+          </li>
+          ))
+        }
+      </ol>
+    </nav>
+    <ol class="flex flex-col gap-[4.5rem]">
+      {
+        events.map((event) => (
+          <li class="w-full flex flex-col gap-5">
+            <Image src={event.data.thumbnail} alt="" class="max-h-[300px] w-fit " />
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-0">
+                <h3 class="text-[1.75rem] leading-[1.8] font-bold">{event.data.title}</h3>
+                <p>
+                  開催日：
+                  <time datetime={event.data.date}>{dateFormatter(event.data.date)}</time>
+                </p>
+                <p>対象：{targetFormatter(event.data.target)}</p>
+              </div>
+              <p>
+                {event.body}
+              </p>
+              <a
+                href={event.data.eventSiteURL}
+                class="border border-[black] px-6 py-4 text-[1.25rem] leading-[1] w-fit"
+              >イベントサイト</a>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</Section>
