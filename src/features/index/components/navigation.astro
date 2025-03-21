@@ -1,0 +1,29 @@
+---
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import Icon from '../../../components/icon.astro'
+
+const itemClass = '[&:not(:first-of-type)]:border-l [&:not(:first-of-type)]:ps-6 border-solid border-[black] font-bold flex items-center'
+---
+
+<nav class="flex gap-6 p-1 mx-[68px] my-[100px]">
+  <a class={itemClass} href="#about">
+    コミュニティについて
+    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+  </a>
+  <a class={itemClass} href="#events">
+    イベント
+    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+  </a>
+  <a class={itemClass} href="#staff">
+    スタッフ
+    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+  </a>
+  <a class={itemClass} href="#sponsors">
+    スポンサー
+    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+  </a>
+  <a class={itemClass} href="#contact">
+    お問い合わせ
+    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+  </a>
+</nav>

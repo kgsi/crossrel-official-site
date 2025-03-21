@@ -16,10 +16,11 @@ const staff = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/staff" }),
   schema: ({ image }) => z.object({
     name: z.string(),
-    description: z.string(),
-    role: z.string(),
+    index: z.number(),
+    description: z.string().nullable(),
+    role: z.string().nullable(),
     x: z.string(),
-    facebook: z.string(),
+    facebook: z.string().optional(),
     profile: image(),
   }),
 });

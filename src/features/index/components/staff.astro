@@ -9,17 +9,23 @@ import Section from '../../../components/section.astro'
 const staffCollection = await getCollection('staff')
 ---
 
-<Section title="スタッフ">
-  <ul>
+<Section title="スタッフ" id="staff">
+  <ul class="flex flex-wrap gap-8">
     {
       staffCollection.map((staff) => (
         <li class="flex flex-col gap-5">
-          <Image src={staff.data.profile} alt="" class="max-h-[300px] w-fit " />
-          <div class="flex flex-col gap-8">
-            <div class="flex flex-col gap-0">
-              <h3 class="text-[1.75rem] leading-[1.8] font-bold">{staff.data.name}</h3>
-              <p>{staff.data.description}</p>
-              <p>{staff.data.role}</p>
+          <Image src={staff.data.profile} alt="" class="max-h-[192px] w-fit " />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-[1em] leading-[1.2] font-bold">{staff.data.name}</h3>
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col gap-1 text-[0.875rem] leading-[1.2]">
+                <p>{staff.data.description}</p>
+                <p class="empty:hidden">{staff.data.role}</p>
+              </div>
+              <div>
+                <a href={`https://x.com/${staff.data.x}`}>X</a>
+                <a href={`https://facebook.com/${staff.data.facebook}`}>Facebook</a>
+              </div>
             </div>
           </div>
         </li>

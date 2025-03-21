@@ -5,11 +5,12 @@ import { dateFormatter } from '../../../libs/formatters/date'
 import { targetFormatter } from '../../../libs/formatters/target'
 
 import Section from '../../../components/section.astro'
+import AnchorButton from '../../../components/anchor-button.astro'
 
 const events = await getCollection('events')
 ---
 
-<Section title="イベント">
+<Section title="イベント" id="events">
   <div class="flex flex-col gap-12">
     <nav>
       <ol>
@@ -42,10 +43,9 @@ const events = await getCollection('events')
               <p>
                 {event.body}
               </p>
-              <a
-                href={event.data.eventSiteURL}
-                class="border border-[black] px-6 py-4 text-[1.25rem] leading-[1] w-fit"
-              >イベントサイト</a>
+              <AnchorButton>
+                イベントサイト
+              </AnchorButton
             </div>
           </li>
         ))

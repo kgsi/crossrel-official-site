@@ -1,0 +1,20 @@
+---
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+import { icon, type IconLookup, type IconName, type IconParams } from '@fortawesome/fontawesome-svg-core'
+
+type Props = {
+  type: 'material' | 'fa'
+  icon: IconName | IconLookup | string
+  params?: IconParams
+  class?: string
+}
+---
+
+<Fragment>
+{ (Astro.props.type === 'material') ? (
+  <span aria-hidden class={`material-symbols-outlined inline-block ${Astro.props.class}`}>{Astro.props.icon}</span>
+) : (
+  <Fragment set:html={icon(Astro.props.icon, Astro.props.params).html} />
+)}
+</Fragment>

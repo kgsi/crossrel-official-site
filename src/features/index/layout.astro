@@ -4,12 +4,15 @@ import { getCollection } from 'astro:content'
 
 import style from '../../assets/style.css'
 
-import Logo from '../../components/logo.astro'
-
+import Navigation from './components/navigation.astro'
+import Header from './components/header.astro'
 import Head from './components/head.astro'
 import About from './components/about.astro'
 import Events from './components/events.astro'
 import Staff from './components/staff.astro'
+import Sponsors from './components/sponsors.astro'
+import Contact from './components/contact.astro'
+import Footer from './components/footer.astro'
 
 import Event_R35 from '../../assets/img/events/r35/thumbnail.png'
 import Event_Begin2025 from '../../assets/img/events/begin2025/thumbnail.png'
@@ -19,13 +22,6 @@ import Event_Scene_Okane from '../../assets/img/events/okane/scene.jpg'
 import Event_Scene_Pdm from '../../assets/img/events/pdm/scene.jpg'
 import Event_Scene_Fintech from '../../assets/img/events/fintech/scene.jpg'
 
-import Staff_kgsi from '../../assets/img/staff/kgsi.jpg'
-import Staff_kocho_katsuhiko from '../../assets/img/staff/kocho_katsuhiko.jpg'
-import Staff_mrhiro1112 from '../../assets/img/staff/mrhiro1112.jpg'
-import Staff_tkhr_kws from '../../assets/img/staff/tkhr_kws.jpg'
-import Staff_mewmoppel from '../../assets/img/staff/mewmoppel.jpg'
-import Staff_creatorqsf from '../../assets/img/staff/creatorqsf.jpg'
-
 const events = await getCollection('events')
 ---
 
@@ -33,15 +29,15 @@ const events = await getCollection('events')
 <html lang="ja">
   <Head />
   <body class="m-0 font-sans text-medium flex flex-col">
-    <header class="w-full px-[68px] py-[100px] flex flex-col gap-10">
-      <h1>
-        <Logo class="h-[90px]" />
-      </h1>
-      <p class="text-[2.5rem] font-bold leading-[1.5]">テック業界の多様な才能が集まり、<br />ナレッジや人が「交差」するコミュニティ</p>
-    </header>
+    <Navigation />
+    <Header />
     <About />
     <Events />
     <Staff />
+    <Sponsors />
+    <Contact />
+    <Footer />
+
     { /*
     <aside class="p-6 w-full">
       <figure class="m-0 w-full">
