@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+:root {
+  --font-size-xxl: 2.5rem; /* 40px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-l: 1.25rem; /* 20px */
+  --font-size-m: 1rem; /*16px */
+  --font-size-s: 0.875rem; /*14px */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-xxl: 1,75rem; /* 28px */
+    --font-size-xl: 1.25rem; /* 20px */
+    --font-size-l: 1.25rem; /* 20px */
+    --font-size-m: 1rem; /* 16px */
+    --font-size-s: 0.875rem; /* 14px */
+  }
+}

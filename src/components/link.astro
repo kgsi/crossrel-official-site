@@ -1,0 +1,24 @@
+---
+import Icon from './icon.astro'
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+
+const { target, href } = Astro.props
+const rel = target === '_blank' ? 'noopener noreferrer' : null
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class={`underline underline-offset-[.3rem] ${Astro.props.class}`}
+>
+  <slot />
+  {
+    (target === '_blank' ) && (
+      <span class="ms-[0.2rem]">
+        <Icon type="fa" icon={faUpRightFromSquare} />
+        <span class="sr-only">新しいタブで開く</span>
+      </span>
+    )
+  }
+</a>

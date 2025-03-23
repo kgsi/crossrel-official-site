@@ -1,13 +1,18 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import { dateFormatter } from '../../../libs/formatters/date'
 import { targetFormatter } from '../../../libs/formatters/target'
 
 import Section from '../../../components/section.astro'
 import AnchorButton from '../../../components/anchor-button.astro'
 
-const events = await getCollection('events')
+const eventCollection= await getCollection('events')
+const events = await Promise.all(eventCollection.map(async (event) => {
+  const { Content } = await render(event)
+  return { ...event, Content }
+}))
+
 ---
 
 <Section title="イベント" id="events">
@@ -19,7 +24,7 @@ const events = await getCollection('events')
           <li class="contents [&:not(:first-of-type)]:before:content-['/'] [&:not(:first-of-type)]:before:inline-block [&:not(:first-of-type)]:before:px-2">
             <a
               href="#"
-              class="underline text-[1.25rem]"
+              class="underline text-l"
             >{event.data.title}</a>
           </li>
           ))
@@ -33,16 +38,16 @@ const events = await getCollection('events')
             <Image src={event.data.thumbnail} alt="" class="max-h-[300px] w-fit " />
             <div class="flex flex-col gap-8">
               <div class="flex flex-col gap-0">
-                <h3 class="text-[1.75rem] leading-[1.8] font-bold">{event.data.title}</h3>
+                <h3 class="text-xl font-bold">{event.data.title}</h3>
                 <p>
                   開催日：
                   <time datetime={event.data.date}>{dateFormatter(event.data.date)}</time>
                 </p>
                 <p>対象：{targetFormatter(event.data.target)}</p>
               </div>
-              <p>
-                {event.body}
-              </p>
+              <div class="flex flex-col gap-0">
+                <event.Content />
+              </div>
               <AnchorButton>
                 イベントサイト
               </AnchorButton

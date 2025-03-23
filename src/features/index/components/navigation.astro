@@ -1,29 +1,42 @@
 ---
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../components/icon.astro'
+import Section from '../../../components/section.astro'
 
-const itemClass = '[&:not(:first-of-type)]:border-l [&:not(:first-of-type)]:ps-6 border-solid border-[black] font-bold flex items-center'
+const itemClass = '[&:not(:first-of-type)]:ps-6 font-bold [&>a]:flex [&>a]:items-center'
 ---
 
-<nav class="flex gap-6 p-1 mx-[68px] my-[100px]">
-  <a class={itemClass} href="#about">
-    コミュニティについて
-    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
-  </a>
-  <a class={itemClass} href="#events">
-    イベント
-    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
-  </a>
-  <a class={itemClass} href="#staff">
-    スタッフ
-    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
-  </a>
-  <a class={itemClass} href="#sponsors">
-    スポンサー
-    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
-  </a>
-  <a class={itemClass} href="#contact">
-    お問い合わせ
-    <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
-  </a>
-</nav>
+<Section as="nav">
+  <ul class="flex gap-6 p-1 flex-wrap divide-x-[1px] divide-[black]">
+    <li class={itemClass}>
+      <a href="#about">
+        コミュニティについて
+        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+      </a>
+    </li>
+    <li class={itemClass}>
+      <a href="#events">
+        イベント
+        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+      </a>
+    </li>
+    <li class={itemClass}>
+      <a href="#staff">
+        スタッフ
+        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+      </a>
+    </li>
+    <li class={itemClass}>
+      <a href="#sponsors">
+        スポンサー
+        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+      </a>
+    </li>
+    <li class={itemClass}>
+      <a href="#contact">
+        お問い合わせ
+        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem]" />
+      </a>
+    </li>
+  </ul>
+</Section>

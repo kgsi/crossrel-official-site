@@ -9,42 +9,48 @@ export default {
     fontFamily: {
       'sans': ['IBM Plex Sans', 'sans-serif'],
     },
+    lineHeight: {
+      'default': '1,8',
+      'tight': '1.5',
+      'tighter': '1.2',
+      'none': '1',
+    },
     fontSize: {
-      'medium': [
-        '1.0rem', // 16px
+      's': [
+        'var(--font-size-s)',
         {
           lineHeight: '1.8',
           letterSpacing: '0',
-          fontWeight: '400',
         },
       ],
-      'large': [
-        '1.25rem', // 24px
+      'm': [
+        'var(--font-size-m)',
         {
-          lineHeight: '2.5', // 48px
-          letterSpacing: '0.1em',
-          fontWeight: '500',
+          lineHeight: '1.8',
+          letterSpacing: '0',
         },
       ],
-      'xlarge': [
-        '1.5rem', // 24px
+      'l': [
+        'var(--font-size-l)',
         {
-          lineHeight: '2.5', // 48px
-          letterSpacing: '0.05em',
-          fontWeight: '500',
+          lineHeight: '1.8',
+          letterSpacing: '0',
         },
       ],
-      'huge': [
-        '2.5rem', // 32px
+      'xl': [
+        'var(--font-size-xl)',
         {
-          lineHeight: '4.5rem',
-          letterSpacing: '0.11em',
-          fontWeight: '450',
+          lineHeight: '1.8',
+          letterSpacing: '0',
         },
       ],
-    },
-    maxWidth: {
-      content: '50rem'
+      'xxl': [
+        'var(--font-size-xxl)',
+        {
+          lineHeight: '1.8',
+          letterSpacing: '0',
+        },
+      ],
     },
 	},
 	plugins: [],
