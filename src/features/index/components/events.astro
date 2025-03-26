@@ -48,9 +48,9 @@ const events = await Promise.all(eventCollection.map(async (event) => {
               <div class="flex flex-col gap-0">
                 <event.Content />
               </div>
-              <AnchorButton>
+              <AnchorButton href={event.data.eventSiteURL}>
                 イベントサイト
-              </AnchorButton
+              </AnchorButton>
             </div>
           </li>
         ))
