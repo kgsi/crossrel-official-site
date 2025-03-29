@@ -23,10 +23,10 @@ const events = (await Promise.all(eventCollection.map(async (event) => {
         {
           events.map((event) => (
           <li class="contents [&:not(:first-of-type)]:before:content-['/'] [&:not(:first-of-type)]:before:inline-block [&:not(:first-of-type)]:before:px-2">
-            <a
-              href="#"
+            <Link
+              href={event.data.eventSiteURL}
               class="underline text-l"
-            >{event.data.title}</a>
+            >{event.data.title}</Link>
           </li>
           ))
         }
