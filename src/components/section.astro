@@ -2,7 +2,7 @@
 const { title, id, as: Component = "section" } = Astro.props
 ---
 
-<Component class="flex flex-col gap-6 md:px-[4rem] px-[2rem] md:py-[6rem] py-[4rem] max-w-[65em]">
+<Component class={`flex flex-col gap-6 md:px-[4rem] px-[2rem] md:py-[6rem] py-[4rem] max-w-[65em] ${Astro.props.class}`}>
   { title && (
     <h2 id={id} class="w-fit px-2 py-1 bg-[black] text-[white] font-bold text-m">
       {title}
@@ -10,4 +10,4 @@ const { title, id, as: Component = "section" } = Astro.props
     </h2>
   )}
   <slot />
-</Component >
+</Component>
