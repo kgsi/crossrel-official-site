@@ -5,6 +5,7 @@ import { dateFormatter } from '../../../libs/formatters/date'
 import { targetFormatter } from '../../../libs/formatters/target'
 
 import Section from '../../../components/section.astro'
+import Link from '../../../components/link.astro'
 import AnchorButton from '../../../components/anchor-button.astro'
 
 const eventCollection= await getCollection('events')
@@ -56,5 +57,9 @@ const events = (await Promise.all(eventCollection.map(async (event) => {
         ))
       }
     </ol>
+    <p class="flex flex-col text-l">
+      <span aria-hidden>…</span>
+      <Link href="/events">イベントをもっと見る</Link>
+    </p>
   </div>
 </Section>
