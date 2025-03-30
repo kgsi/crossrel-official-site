@@ -13,9 +13,9 @@ const staffCollection = await getCollection('staff')
   <ul class="flex flex-wrap gap-8">
     {
       staffCollection.map((staff) => (
-        <li class="flex flex-col gap-5">
-          <Image src={staff.data.profile} alt="" class="max-h-[192px] w-fit object-left object-contain" />
-          <div class="flex flex-col gap-2">
+        <li class="flex md:flex-col gap-5 w-full md:w-[unset]">
+          <Image src={staff.data.profile} alt="" class="flex-1 w-[50%] md:w-fit md:max-h-[12rem] md:max-w-[12rem] object-left object-contain" />
+          <div class="flex flex-col gap-2 flex-1 min-w-[50%]">
             <h3 class="text-m leading-tighter font-bold">{staff.data.name}</h3>
             <div class="flex flex-col gap-4">
               <div class="hidden flex-col gap-1 text-s leading-tighter [&:has(>*:not(:empty))]:flex">
