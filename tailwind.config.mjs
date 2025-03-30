@@ -7,7 +7,7 @@ export default {
       full: '99999px',
     },
     fontFamily: {
-      'sans': ['IBM Plex Sans', 'sans-serif'],
+      'sans': ['IBM Plex Sans', 'system-ui', 'sans-serif'],
     },
     lineHeight: {
       'default': '1,8',

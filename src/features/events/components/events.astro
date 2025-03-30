@@ -12,8 +12,7 @@ const eventCollection= await getCollection('events')
 const events = (await Promise.all(eventCollection.map(async (event) => {
   const { Content } = await render(event)
   return { ...event, Content }
-}))).toSorted((a, b) => new Date(b.data.date) - new Date(a.data.date))
-
+}))).toSorted((a, b) => (new Date(b.data.date) < new Date(a.data.date) ? -1 : 1))
 ---
 
 <Section id="events">
@@ -46,7 +45,7 @@ const events = (await Promise.all(eventCollection.map(async (event) => {
                 <h3 class="text-xl font-bold">{event.data.title}</h3>
                 <p>
                   開催日：
-                  <time datetime={event.data.date}>{dateFormatter(event.data.date)}</time>
+                  <time datetime={event.data.date.toISOString()}>{dateFormatter(event.data.date)}</time>
                 </p>
                 <p>対象：{targetFormatter(event.data.target)}</p>
               </div>

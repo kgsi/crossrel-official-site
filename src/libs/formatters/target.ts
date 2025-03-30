@@ -1,6 +1,6 @@
 const targets = {
   'designer': 'デザイナー',
-  'enginner': 'エンジニア',
+  'engineer': 'エンジニア',
 } as const
 
 export const targetFormatter = (target: keyof typeof targets) => targets[target]

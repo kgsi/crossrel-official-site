@@ -1,16 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content'
+import '../../assets/style.css'
 
-import style from '../../assets/style.css'
 import Logo from '../../components/logo.astro'
-import Section from '../../components/section.astro'
 
 import Head from './components/head.astro'
 import Events from './components/events.astro'
 import Footer from './components/footer.astro'
-
-const events = await getCollection('events')
 ---
 
 <!doctype html>

@@ -3,12 +3,8 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content'
 import { faFacebook, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
-import { dateFormatter } from '../../../libs/formatters/date'
-import { targetFormatter } from '../../../libs/formatters/target'
-
 import Section from '../../../components/section.astro'
 import Icon from '../../../components/icon.astro'
-import Link from '../../../components/icon.astro'
 
 const staffCollection = await getCollection('staff')
 ---
@@ -27,10 +23,8 @@ const staffCollection = await getCollection('staff')
                 <p class="empty:hidden">{staff.data.role}</p>
               </div>
               <div>
-                <a href={`https://x.com/${staff.data.x}`}>
-                  <Icon type="fa" icon={faXTwitter} />
-                </a>
-                <a href={`https://facebook.com/${staff.data.facebook}`}><Icon type="fa" icon={faFacebook} /></a>
+                <a href={`https://x.com/${staff.data.x}`}><Icon type="fa" icon={faXTwitter} alt="X" /></a>
+                <a href={`https://facebook.com/${staff.data.facebook}`}><Icon type="fa" icon={faFacebook} alt="Facebook" /></a>
               </div>
             </div>
           </div>
