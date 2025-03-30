@@ -1,6 +1,6 @@
 ---
 name: こちょう
-index: 1
+number: 1
 description: デザインマネージャー
 role: コミュニティオーナー
 x: kocho_katsuhiko

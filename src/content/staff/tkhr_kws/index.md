@@ -1,6 +1,6 @@
 ---
 name: takehiro kawase
-index: 3
+number: 3
 description: デザイナー
 role: ""
 x: tkhr_kws

@@ -1,6 +1,6 @@
 ---
 name: tsubo
-index: 2
+number: 2
 description: 
 role: ""
 x: mrhiro1112

@@ -1,6 +1,6 @@
 ---
 name: こぎそ
-index: 0
+number: 0
 description: プロダクトデザイナー
 role: コミュニティオーナー
 x: kgsi

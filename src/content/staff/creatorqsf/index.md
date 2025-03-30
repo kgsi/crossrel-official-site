@@ -1,6 +1,6 @@
 ---
 name: たふみ
-index: 5
+number: 5
 description: オンスクリーンプロダクトデザイナー
 role: ""
 x: creatorqsf

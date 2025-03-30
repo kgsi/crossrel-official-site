@@ -6,7 +6,7 @@ import { faFacebook, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import Section from '../../../components/section.astro'
 import Icon from '../../../components/icon.astro'
 
-const staffCollection = await getCollection('staff')
+const staffCollection = (await getCollection('staff')).toSorted((a, b) => { console.log(a, b); return a.data.number < b.data.number ? -1 : 1})
 ---
 
 <Section title="スタッフ" id="staff">

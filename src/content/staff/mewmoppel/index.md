@@ -1,6 +1,6 @@
 ---
 name: mewmo
-index: 4
+number: 4
 description: デザインプログラムマネージャー
 role: ""
 x: mewmoppel
