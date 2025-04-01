@@ -8,11 +8,11 @@ import Section from '../../../components/section.astro'
 import AnchorButton from '../../../components/anchor-button.astro'
 import Link from '../../../components/link.astro'
 
-const eventCollection= await getCollection('events')
+const eventCollection = await getCollection('events')
 const events = (await Promise.all(eventCollection.map(async (event) => {
   const { Content } = await render(event)
   return { ...event, Content }
-  }))) //.toSorted((a, b) => (new Date(b.data.date) < new Date(a.data.date) ? -1 : 1))
+}))).toSorted((a, b) => (new Date(b.data.date) < new Date(a.data.date) ? -1 : 1))
 ---
 
 <Section id="events">

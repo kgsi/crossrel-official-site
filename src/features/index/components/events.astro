@@ -8,7 +8,7 @@ import Section from '../../../components/section.astro'
 import Link from '../../../components/link.astro'
 import AnchorButton from '../../../components/anchor-button.astro'
 
-const eventCollection= await getCollection('events')
+const eventCollection = await getCollection('events')
 const events = (await Promise.all(eventCollection.map(async (event) => {
   const { Content } = await render(event)
   return { ...event, Content }
