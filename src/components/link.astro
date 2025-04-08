@@ -10,7 +10,7 @@ const rel = target === '_blank' ? 'noopener noreferrer' : null
   href={href}
   target={target}
   rel={rel}
-  class={`underline underline-offset-[.3rem] ${Astro.props.class}`}
+  class={`underline underline-offset-[.3rem] ${Astro.props.class} hover:no-underline`}
 >
   <slot />
   {

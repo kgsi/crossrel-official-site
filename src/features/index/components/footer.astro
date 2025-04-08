@@ -1,17 +1,23 @@
 ---
-import Link from '../../../components/link.astro'
-import Section from '../../../components/section.astro'
+import Link from '../../../components/link.astro';
+import Section from '../../../components/section.astro';
 ---
 
 <!-- <footer class="flex flex-col gap-14 px-[68px] py-[100px]"> -->
 <Section as="footer">
   <dl class="[&>*]:inline-block text-l [&_a]:underline">
-    <dt class="after:content-['：']">SNS</dt><dd class="after:content-['/'] after:px-2"><Link href="https://x.com/">X</Link></dd><dd class="after:content-['/'] after:px-2"><Link href="#">Peatix</Link></dd><dd><Link href="#">Connpass</Link></dd>
+    <dt class="after:content-['：']">SNS</dt><dd class="after:content-['/'] after:px-2">
+      <Link href="https://x.com/">X</Link>
+    </dd><dd class="after:content-['/'] after:px-2">
+      <Link href="https://crossrel.peatix.com/view">Peatix</Link>
+    </dd><dd>
+      <Link href="https://cross-rel.connpass.com/">Connpass</Link>
+    </dd>
   </dl>
   <div class="flex flex-col gap-6">
     <dl>
       <div class="flex">
-        <dt class="after:content-['：']">デザイン</dt>
+        <dt class="after:content-['：']">ウェブサイトデザイン</dt>
         <dd>こぎそ（<Link href="https://x.com/kgsi">@kgsi</Link>）</dd>
       </div>
       <div class="flex">
@@ -19,8 +25,8 @@ import Section from '../../../components/section.astro'
         <dd>たふみ（<Link href="https://x.com/CreatorQsF">@CreatorQsF</Link>）</dd>
       </div>
       <div class="flex">
-        <dt class="after:content-['：']">監修</dt>
-        <dd>カワセ（<Link href="https://x.com/tkhr_kws">@tkhr_kws</Link>）</dd>
+        <dt class="after:content-['：']">ロゴデザイン</dt>
+        <dd>takehiro kawase（<Link href="https://x.com/tkhr_kws">@tkhr_kws</Link>）</dd>
       </div>
     </dl>
     <small class="text-m">&copy; CrossRel, Inc. All Rights Reserved.</small>

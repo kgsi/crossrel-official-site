@@ -1,40 +1,64 @@
 ---
-import Icon from '../../../components/icon.astro'
-import Section from '../../../components/section.astro'
+import Icon from "../../../components/icon.astro";
+import Section from "../../../components/section.astro";
 
-const itemClass = 'lg:[&:not(:first-of-type)]:ps-6 font-bold [&>a]:flex [&>a]:items-center'
+const itemClass =
+  "lg:[&:not(:first-of-type)]:ps-6 font-bold [&>a]:flex [&>a]:items-center";
 ---
 
-<Section as="nav">
-  <ul class="flex flex-col lg:gap-6 gap-2 p-1 flex-wrap lg:divide-x-[1px] lg:divide-[black] lg:flex-row">
+<Section
+  as="nav"
+  class="sticky top-0 bg-white md:py-[3rem] py-[2rem] lg:hidden"
+>
+  <ul class="flex flex-col gap-2 p-1 flex-wrap lg:flex-row">
     <li class={itemClass}>
       <a href="#about">
         コミュニティについて
-        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem] hidden lg:block" />
+        <Icon
+          type="material"
+          icon="keyboard_arrow_down"
+          class="text-[2rem] hidden lg:block"
+        />
       </a>
     </li>
     <li class={itemClass}>
       <a href="#events">
         イベント
-        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem] hidden lg:block" />
+        <Icon
+          type="material"
+          icon="keyboard_arrow_down"
+          class="text-[2rem] hidden lg:block"
+        />
       </a>
     </li>
     <li class={itemClass}>
       <a href="#staff">
         スタッフ
-        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem] hidden lg:block" />
+        <Icon
+          type="material"
+          icon="keyboard_arrow_down"
+          class="text-[2rem] hidden lg:block"
+        />
       </a>
     </li>
     <li class={itemClass}>
       <a href="#sponsors">
         スポンサー
-        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem] hidden lg:block" />
+        <Icon
+          type="material"
+          icon="keyboard_arrow_down"
+          class="text-[2rem] hidden lg:block"
+        />
       </a>
     </li>
     <li class={itemClass}>
       <a href="#contact">
         お問い合わせ
-        <Icon type="material" icon="keyboard_arrow_down" class="text-[2rem] hidden lg:block" />
+        <Icon
+          type="material"
+          icon="keyboard_arrow_down"
+          class="text-[2rem] hidden lg:block"
+        />
       </a>
     </li>
   </ul>
