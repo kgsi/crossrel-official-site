@@ -1,9 +1,9 @@
 ---
 name: tsubo
 number: 2
-description: 
-role: ""
+description: デザインマネージャー
+role: 'コミュニティオーナー'
 x: mrhiro1112
-facebook: ""
+facebook: ''
 profile: ./profile.jpg
 ---
