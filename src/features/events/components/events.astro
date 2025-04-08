@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import { dateFormatter } from '../../../libs/formatters/date';
+import { targetFormatter } from '../../../libs/formatters/target';
+
+import Section from '../../../components/section.astro';
+import AnchorButton from '../../../components/anchor-button.astro';
+import Link from '../../../components/link.astro';
+
+const eventCollection = await getCollection('events');
+const events = (
+  await Promise.all(
+    eventCollection.map(async (event) => {
+      const { Content } = await render(event);
+      return { ...event, Content };
+    }),
+  )
+).toSorted((a, b) => (new Date(b.data.date) < new Date(a.data.date) ? -1 : 1));
+---
+
+<Section id="events">
+  <div class="flex flex-col gap-8">
+    <Link href="/" class="w-fit">TOPに戻る</Link>
+    <h2 class="text-xxl font-bold">イベント一覧</h2>
+  </div>
+  <div class="flex flex-col gap-12">
+    <ol class="flex flex-col gap-[4.5rem]">
+      {
+        events.map((event) => (
+          <li class="w-full flex flex-col gap-5">
+            <Image
+              src={event.data.thumbnail}
+              alt=""
+              class="max-h-[300px] w-fit object-left object-contain"
+            />
+            <div class="flex flex-col gap-8">
+              <div class="flex flex-col gap-0">
+                <h3 class="text-xl font-bold">{event.data.title}</h3>
+                <p>
+                  開催日：
+                  <time datetime={event.data.date.toISOString()}>
+                    {dateFormatter(event.data.date)}
+                  </time>
+                </p>
+                <p>対象：{targetFormatter(event.data.target)}</p>
+              </div>
+              <div class="flex flex-col gap-0">
+                <event.Content />
+              </div>
+              <AnchorButton href={event.data.eventSiteURL}>イベントサイト</AnchorButton>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</Section>

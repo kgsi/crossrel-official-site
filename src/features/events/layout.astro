@@ -1,0 +1,23 @@
+---
+import '../../assets/style.css'
+
+import Logo from '../../components/logo.astro'
+
+import Head from './components/head.astro'
+import Events from './components/events.astro'
+import Footer from './components/footer.astro'
+---
+
+<!doctype html>
+<html lang="ja">
+  <Head />
+  <body class="m-0 font-sans text-m flex flex-col">
+    <header class="md:px-[4rem] px-[2rem] pt-[5rem]">
+      <div class="h-[2.5rem] [&_img]:h-full">
+        <a href="/"><Logo class="h-[2.5rem]" /></a>
+      </div>
+    </header>
+    <Events />
+    <Footer />
+  </body>
+</html>
