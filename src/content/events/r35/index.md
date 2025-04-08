@@ -1,10 +1,11 @@
 ---
-title: "R35. Meetup"
+title: 'R35. Meetup'
 date: 2024-10-15
-target: designer
+target: all
 eventSiteURL: https://cross-rel.connpass.com/event/329288/
 thumbnail: ./thumbnail.png
 ---
+
 テクノロジーの進化とともに、テック界隈のプロフェッショナルの役割も大きく変化してきました。20代、30代を駆け抜けた、あなたたちは今何を考えていますか？
 
 キャリアの岐路に立ち、次のステージへの不安と期待が交錯する...そんな経験をされた方も多いのではないでしょうか。

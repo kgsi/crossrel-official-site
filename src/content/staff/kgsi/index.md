@@ -1,7 +1,7 @@
 ---
 name: こぎそ
 number: 0
-description: プロダクトデザイナー
+description: デジタルプロダクトデザイナー
 role: コミュニティオーナー
 x: kgsi
 facebook: kgsi

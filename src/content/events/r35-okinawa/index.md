@@ -1,10 +1,11 @@
 ---
-title: "R35. Meetup in OKINAWA"
+title: 'R35. Meetup in OKINAWA'
 date: 2025-03-21
-target: designer
+target: all
 eventSiteURL: https://cross-rel.connpass.com/event/344256/
 thumbnail: ./thumbnail.png
 ---
+
 テクノロジーの進化とともに、テック界隈のプロフェッショナルの役割も大きく変化してきました。20代、30代を駆け抜けた、あなたたちは今何を考えていますか？
 
 キャリアの岐路に立ち、次のステージへの不安と期待が交錯する...そんな経験をされた方も多いのではないでしょうか。
@@ -14,4 +15,3 @@ thumbnail: ./thumbnail.png
 今の時代に求められる「人材」とは何か、そして私たちはどのようにして業界の発展に貢献できるのか。 共に考え、語り合い、明日への一歩を踏み出しましょう。
 
 今回は前回好評だったR35. Meetupの特別編として沖縄で開催します！皆様奮ってご参加くださいませ。
-
