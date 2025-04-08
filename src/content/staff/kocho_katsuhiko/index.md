@@ -1,9 +1,9 @@
 ---
 name: こちょう
-number: 1
+number: 2
 description: デザインマネージャー
 role: コミュニティオーナー
 x: kocho_katsuhiko
-facebook: ""
+facebook: ''
 profile: ./profile.jpg
 ---

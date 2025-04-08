@@ -1,6 +1,6 @@
 ---
 name: tsubo
-number: 2
+number: 1
 description: デザインマネージャー
 role: 'コミュニティオーナー'
 x: mrhiro1112
