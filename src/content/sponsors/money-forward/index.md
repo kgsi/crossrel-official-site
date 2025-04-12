@@ -1,5 +1,5 @@
 ---
-name: 'マネーフォワード'
+name: 'Money Forward'
 url: 'https://corp.moneyforward.com/'
 type: 'sponsor'
 order: 5
