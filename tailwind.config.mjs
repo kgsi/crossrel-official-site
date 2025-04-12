@@ -16,6 +16,13 @@ export default {
       none: '1',
     },
     fontSize: {
+      xs: [
+        'var(--font-size-xs)',
+        {
+          lineHeight: '1.2',
+          letterSpacing: '0',
+        },
+      ],
       s: [
         'var(--font-size-s)',
         {
