@@ -1,6 +1,6 @@
 ---
 name: 'SEVEN DEX'
-url: 'https://7dex.co.jp/'
+url: 'https://sevendex.com/'
 type: 'sponsor'
 order: 6
 thumbnail: './thumbnail.png'
