@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const events = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -14,7 +14,7 @@ const events = defineCollection({
 });
 
 const staff = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/staff' }),
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -27,4 +27,31 @@ const staff = defineCollection({
     }),
 });
 
-export const collections = { events, staff };
+const sponsors = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      url: z.string(),
+      type: z.enum(['community', 'sponsor']),
+      order: z.number().optional(),
+      thumbnail: image(),
+    }),
+});
+
+// This is needed to make TypeScript happy
+declare module 'astro:content' {
+  interface CollectionEntry {
+    sponsors: {
+      data: {
+        name: string;
+        url: string;
+        type: 'community' | 'sponsor';
+        order?: number;
+        thumbnail: ImageMetadata;
+      };
+    };
+  }
+}
+
+export const collections = { events, staff, sponsors };
