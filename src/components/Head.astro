@@ -1,10 +1,22 @@
 ---
-const ogImageUrl = new URL('/ogp.png', Astro.site).toString();
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = 'CrossRel | 交差するテックコミュニティ',
+  description = 'CrossRelは、テック業界の多様な才能が集まり、ナレッジや人が「交差」するコミュニティです。',
+  ogImage = new URL('/ogp.png', Astro.site).toString(),
+  canonicalUrl = 'https://crossrel.jp/',
+} = Astro.props;
 ---
 
 <head>
   <meta charset="UTF-8" />
-  <title>CrossRel | 交差するテックコミュニティ</title>
+  <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,13 +33,15 @@ const ogImageUrl = new URL('/ogp.png', Astro.site).toString();
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="CrossRelは、テック業界の多様な才能が集まり、ナレッジや人が「交差」するコミュニティです。"
-  />
-  <meta property="og:image" content={ogImageUrl} />
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content={ogImageUrl} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <link rel="canonical" href={canonicalUrl} />
   <script
     is:inline
     type="text/partytown"
@@ -42,3 +56,4 @@ const ogImageUrl = new URL('/ogp.png', Astro.site).toString();
     gtag('config', 'G-1R2H4VCDHH');
   </script>
 </head>
+

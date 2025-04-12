@@ -1,0 +1,20 @@
+---
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Icon from './icon.astro';
+---
+
+<div class="fixed top-4 right-4 flex flex-row gap-2">
+  <a
+    href="https://crossrel.jp/"
+    class="text-xl font-bold w-16 h-16 md:flex hidden rounded-full justify-center items-center bg-black text-white hover:bg-white hover:text-black border border-black"
+  >
+    <Icon type="fa" icon={faXTwitter} alt="X" /></a
+  >
+  <a
+    href="https://forms.gle/CRVsrNFNX6XHFCDP6"
+    class="font-bold w-16 h-16 md:flex hidden rounded-full justify-center items-center border border-black text-xl hover:bg-black hover:text-white bg-white"
+  >
+    <Icon type="fa" icon={faEnvelope} alt="X" /></a
+  >
+</div>

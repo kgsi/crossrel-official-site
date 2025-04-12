@@ -1,24 +1,63 @@
 ---
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import { icon, type IconLookup, type IconName } from '@fortawesome/fontawesome-svg-core'
+import { icon, type IconLookup, type IconName } from '@fortawesome/fontawesome-svg-core';
 
 type Props = {
-  class?: string
-  alt?: string
-} & ({
-  type: 'fa'
-  icon: IconName | IconLookup
-} | {
-  type: 'material'
-  icon: string
-})
+  class?: string;
+  alt?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | number;
+} & (
+  | {
+      type: 'fa';
+      icon: IconName | IconLookup;
+    }
+  | {
+      type: 'material';
+      icon: string;
+    }
+);
+
+const getSizeClass = (size: Props['size']): string => {
+  if (typeof size === 'number') return `text-[${size}px]`;
+
+  const sizeMap = {
+    xs: 'text-xs',
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
+    xl: 'text-xl',
+    '2xl': 'text-2xl',
+  };
+
+  return size ? sizeMap[size] : 'text-base';
+};
+
+const { size = 'md' } = Astro.props;
+const sizeClass = getSizeClass(size);
 ---
 
 <Fragment>
-{ (Astro.props.type === 'material') ? (
-  <span aria-hidden class={`material-symbols-outlined inline-block ${Astro.props.class}`} aria-label={Astro.props.alt}>{Astro.props.icon}</span>
-) : (
-  <Fragment set:html={icon(Astro.props.icon, { attributes: { 'aria-label': Astro.props.alt || '' } }).html} />
-)}
+  {
+    Astro.props.type === 'material' ? (
+      <span
+        aria-hidden
+        class={`material-symbols-outlined inline-block ${sizeClass} ${Astro.props.class}`}
+        aria-label={Astro.props.alt}
+      >
+        {Astro.props.icon}
+      </span>
+    ) : (
+      <Fragment
+        set:html={
+          icon(Astro.props.icon, {
+            attributes: {
+              'aria-label': Astro.props.alt || '',
+              class: `${sizeClass} ${Astro.props.class || ''}`,
+            },
+          }).html
+        }
+      />
+    )
+  }
 </Fragment>
