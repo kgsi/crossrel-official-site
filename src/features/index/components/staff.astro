@@ -20,7 +20,7 @@ const staffCollection = (await getCollection('staff')).toSorted((a, b) => {
           <Image
             src={staff.data.profile}
             alt=""
-            class="flex-1 w-[50%] md:w-fit md:max-h-[12rem] md:max-w-[12rem] object-left object-contain"
+            class="flex-1 w-[30%] md:w-fit md:max-h-[12rem] md:max-w-[12rem] object-left object-contain"
           />
           <div class="flex flex-col gap-2 flex-1 min-w-[50%]">
             <h3 class="text-m leading-tighter font-bold">{staff.data.name}</h3>
