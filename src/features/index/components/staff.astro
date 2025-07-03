@@ -1,10 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { faFacebook, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-
 import Section from '../../../components/section.astro';
-import Icon from '../../../components/icon.astro';
 
 const staffCollection = (await getCollection('staff')).toSorted((a, b) => {
   console.log(a, b);
@@ -12,33 +8,19 @@ const staffCollection = (await getCollection('staff')).toSorted((a, b) => {
 });
 ---
 
-<Section title="スタッフ" id="staff">
-  <ul class="flex flex-wrap gap-6">
+<Section title="Special Thanks" id="staff">
+  <ul class="flex flex-wrap gap-1">
     {
       staffCollection.map((staff) => (
-        <li class="flex md:flex-col gap-5 w-full md:w-[unset]">
-          <Image
-            src={staff.data.profile}
-            alt=""
-            class="flex-1 w-[30%] md:w-fit md:max-h-[12rem] md:max-w-[12rem] object-left object-contain"
-          />
-          <div class="flex flex-col gap-2 flex-1 min-w-[50%]">
-            <h3 class="text-m leading-tighter font-bold">{staff.data.name}</h3>
-            <div class="flex flex-col gap-4">
-              <div class="hidden flex-col gap-1 text-s leading-tighter [&:has(>*:not(:empty))]:flex">
-                <p class="empty:hidden text-xs">{staff.data.description}</p>
-                <p class="empty:hidden text-xs">{staff.data.role}</p>
-              </div>
-              <div>
-                <a href={`https://x.com/${staff.data.x}`}>
-                  <Icon type="fa" icon={faXTwitter} alt="X" />
-                </a>
-                <a href={`https://facebook.com/${staff.data.facebook}`}>
-                  <Icon type="fa" icon={faFacebook} alt="Facebook" />
-                </a>
-              </div>
-            </div>
-          </div>
+        <li class="gap-2 after:content-['/'] after:text-gray-500 after:ml-1 last:after:content-['']">
+          <a
+            class="underline underline-offset-[.3rem] hover:no-underline"
+            href={`https://x.com/${staff.data.x}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {staff.data.name}
+          </a>
         </li>
       ))
     }
