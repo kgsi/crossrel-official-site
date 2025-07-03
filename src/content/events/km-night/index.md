@@ -1,5 +1,5 @@
 ---
-title: 'THE UI EXPERTS - AIとMCPの現在地'
+title: 'Knowledge Management Night - AI時代のナレッジマネジメント'
 date: 2025-07-02
 target: all
 eventSiteURL: https://km-night.peatix.com/
