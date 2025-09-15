@@ -2,6 +2,8 @@
 import IndexPage from '../features/index/layout.astro';
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const title = 'CrossRel | 交差するテックコミュニティ';
+const description = 'CrossRelは、テック業界の多様な才能が集まり、ナレッジや人が「交差」するコミュニティです。';
 ---
 
-<IndexPage canonicalUrl={canonicalUrl} />
+<IndexPage canonicalUrl={canonicalUrl} title={title} description={description} />

@@ -2,6 +2,8 @@
 import EventsPage from '../features/events/layout.astro';
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const title = 'イベント一覧 | CrossRel';
+const description = 'CrossRelのイベント情報一覧。最新のミートアップや勉強会を掲載。';
 ---
 
-<EventsPage canonicalUrl={canonicalUrl} />
+<EventsPage canonicalUrl={canonicalUrl} title={title} description={description} />
