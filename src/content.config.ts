@@ -38,19 +38,7 @@ const sponsors = defineCollection({
     }),
 });
 
-// This is needed to make TypeScript happy
-declare module 'astro:content' {
-  interface CollectionEntry {
-    sponsors: {
-      data: {
-        name: string;
-        url: string;
-        type: 'community' | 'sponsor';
-        order?: number;
-        thumbnail: ImageMetadata;
-      };
-    };
-  }
-}
+// Note: Type inference for collections is provided by Astro.
+// Additional module augmentation is not required here.
 
 export const collections = { events, staff, sponsors };

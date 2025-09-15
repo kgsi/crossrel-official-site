@@ -1,5 +1,7 @@
 ---
-import IndexPage from '../features/index/layout.astro'
+import IndexPage from '../features/index/layout.astro';
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<IndexPage />
+<IndexPage canonicalUrl={canonicalUrl} />
