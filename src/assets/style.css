@@ -17,3 +17,5 @@
     --font-size-xs: 0.75rem; /*12px */
   }
 }
+
+@import 'tailwindcss';
