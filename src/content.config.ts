@@ -32,7 +32,6 @@ const sponsors = defineCollection({
     z.object({
       name: z.string(),
       url: z.string(),
-      type: z.enum(['community', 'sponsor']),
       order: z.number().optional(),
       thumbnail: image(),
     }),

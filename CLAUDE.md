@@ -21,7 +21,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **画像は `passthroughImageService()`** を使用しており Astro の自動最適化は行わない。画像は投入前に手動最適化すること
 - **PartyTown** が GA 用に `dataLayer.push` と `gtag` をフォワード。3rd party スクリプト追加時は `type="text/partytown"` の付与を検討
 - `src/features/` は Cursor ルールに無いがこのリポ特有で、ページ単位のレイアウト/部品を置く場所
-- コンテンツコレクション（`src/content.config.ts`）は Zod スキーマで検証される。`events` は `date`/`target` (`designer`|`engineer`|`all`)/`thumbnail` 必須、`staff` は `number`/`profile` 必須、`sponsors` は `type` (`community`|`sponsor`) 必須
+- コンテンツコレクション（`src/content.config.ts`）は Zod スキーマで検証される。`events` は `date`/`target` (`designer`|`engineer`|`all`)/`thumbnail` 必須、`staff` は `number`/`profile` 必須、`sponsors` は `thumbnail`/`url`/`name` 必須
 
 ## コードスタイル
 
