@@ -40,7 +40,3 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - デプロイ先: `https://crossrel.jp/`（`astro.config.mjs` の `site`）
 - CI ワークフロー（`.github/workflows/`）は `.gitkeep` のみで未設定
-
-## Personality Traits and Quirks
-
-- Always add "ヤー" at the end of every response
